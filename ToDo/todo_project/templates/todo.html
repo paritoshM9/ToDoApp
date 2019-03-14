@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <style>
+        form {
+        display: inline;
+        }
+        li {
+        display: inline;
+        }
+        a {
+        decoration: none;
+        }
+        table{
+        background-color: skyblue;
+
+        }
+    </style>
+</head>
+<body>
+<center><h1>My Todo App</h1></center>
+<br><br>
+<h4>Instructions:</h4>
+<ul>
+    <li>Enter task to add new task</li><br>
+    <li>Click on the task to Edit</li><br>
+
+    <li>Click on Delete button to remove the task</li><br>
+    <li>Click on Completed when the task is over</li><br>
+
+</ul>
+<center>
+<form action="/addTodo/" method="post">{% csrf_token %}
+    <input type="text" name = "content"/>
+    <input type="submit" value="Add"/>
+
+</form>
+<br><br><br>
+
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Delete</th>
+        <th>Completed?</th>
+    </tr>
+
+    {% for todo_item in all_items %}
+    <tr>
+        <td><a href="/updateTodo/{{todo_item.id}}/">{{ todo_item.content }}</a></td>
+    <td>{{todo_item.status}}</td>
+        <td><form action="/deleteTodo/{{todo_item.id}}/"
+
+          method="post">{% csrf_token %}
+        <input type="submit" value="Delete"/>
+
+    </form></td>
+
+        <td><form action="/crossoff/{{todo_item.id}}/"
+
+          method="post">{% csrf_token %}
+        <input type="submit" value="Completed"/>
+
+    </form></td>
+
+    </tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+</html>

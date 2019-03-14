@@ -1,0 +1,11 @@
+<h1> Edit Task </h1>
+{% for todo_item in all_items  %}
+{% if todo_item.id == e_id %}
+<form action="/editTodo/{{e_id}}/" method="post">{% csrf_token %}
+    <input type="text" name = "content" placeholder="{{todo_item.content}}"/>
+    <input type="submit" value="Add"/>
+
+</form>
+
+{% endif %}
+{% endfor %}
