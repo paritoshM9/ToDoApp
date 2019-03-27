@@ -4,7 +4,7 @@ A simple ToDo webapp written in Django with Postgresql database.
 
 Screenshot:
 
-![](G:\python\ToDoApp\screenshot.png)
+![](screenshot.png)
 
 
 
