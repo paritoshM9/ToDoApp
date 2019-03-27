@@ -5,30 +5,70 @@
         form {
         display: inline;
         }
-        li {
-        display: inline;
-        }
+        
         a {
         decoration: none;
         }
-        table{
-        background-color: skyblue;
+        body{
+	background-color:808080;
+	
+	}
+	div{
+	margin: auto;
+ 	margin-top: 20px;
+  	width: 50%;
+  	padding: 10px;
+	margin: auto;
+	background-color:7FFFD4;
+	color: 2F4F4F;
+	padding:10px;
+	}
 
-        }
+	#instr{
+	margin: auto;
+	background-color:7FFFD4;
+	color: 2F4F4F;
+	padding:10px;
+
+	}
+ 	
+	#main{
+	
+	padding: 10px;
+	background-color: #f2f2f2;
+	}
+#tab2{
+margin:auto;
+margin-top:-20px;
+}
+#tab2 th,#tab2 td {
+  border-bottom: 1px solid #ddd;
+padding: 15px;
+  text-align: left;
+}
+#tab2 tr:hover {background-color: #DCDCDC;}
+
+
     </style>
 </head>
 <body>
-<center><h1>My Todo App</h1></center>
-<br><br>
-<h4>Instructions:</h4>
+<table id = "instr">
+<tr><td>
+<h4><center>Instructions</center></h4></td></tr>
 <ul>
-    <li>Enter task to add new task</li><br>
-    <li>Click on the task to Edit</li><br>
+    <tr><td><li>Enter task to add new task</li></td></tr>
+    <tr><td><li>Click on the task to Edit</li></td></tr>
 
-    <li>Click on Delete button to remove the task</li><br>
-    <li>Click on Completed when the task is over</li><br>
+    <tr><td><li>Click on Delete button to remove the task</li></td></tr>
+    <tr><td><li>Click on Completed when the task is over</li></td></tr>
 
 </ul>
+</table>
+<br><br>
+<div>
+
+<h1><center>My Todo App</center></h1>
+<br>
 <center>
 <form action="/addTodo/" method="post">{% csrf_token %}
     <input type="text" name = "content"/>
@@ -36,8 +76,9 @@
 
 </form>
 <br><br><br>
-
-<table>
+<div id="tab2">
+<table id="main">
+    <div id="tab2">
     <tr>
         <th>Task</th>
         <th>Status</th>
@@ -65,7 +106,10 @@
 
     </tr>
     {% endfor %}
+
 </table>
+</div>
 </center>
+</div>
 </body>
 </html>

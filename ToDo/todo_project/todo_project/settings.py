@@ -78,10 +78,10 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ENTER_USER',
-        'USER': 'ENTER_USER',
-        'PASSWORD':'ENTER_ELEPHANTASQL-PASSWORD',
-        'HOST':'isilo.db.elephantsql.com',
+        'NAME': 'User & Default database',
+        'USER': 'User & Default database',
+        'PASSWORD':'password',
+        'HOST':'Server',
         'PORT':5432,
     }
 
